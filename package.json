@@ -1,0 +1,11 @@
+{
+  "name": "deeo-miners",
+  "version": "0.1.0",
+  "description": "A procedurally generated mining roguelike platformer for the browser",
+  "private": true,
+  "scripts": {
+    "test": "node --test test/level.test.js",
+    "test:smoke": "node test/smoke.js",
+    "build": "node tools/build.js"
+  }
+}

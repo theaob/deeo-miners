@@ -1,0 +1,24 @@
+:root { --pit: #08060c; --soil: #2b1d15; --timber: #9a6a36; --lamp: #fff6c8; --ink: #1a1420; color-scheme: dark; }
+html, body { margin: 0; height: 100%; background: var(--pit); color: var(--lamp); overflow: hidden; }
+body {
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  touch-action: none; user-select: none; -webkit-user-select: none;
+}
+canvas { display: block; image-rendering: pixelated; background: #000; }
+#touch { display: none; }
+body.touch { justify-content: flex-start; }
+body.touch #touch {
+  display: flex; justify-content: space-between; align-items: center;
+  position: fixed; left: 0; right: 0; bottom: 0; box-sizing: border-box;
+  padding: 10px max(16px, env(safe-area-inset-right, 0px)) calc(14px + env(safe-area-inset-bottom, 0px)) max(16px, env(safe-area-inset-left, 0px));
+}
+#touch button {
+  font: bold 13px "Courier New", monospace; color: var(--lamp);
+  background: var(--soil); border: 2px solid var(--timber); border-radius: 10px;
+  touch-action: none; -webkit-tap-highlight-color: transparent;
+}
+#touch button.on { background: var(--timber); color: var(--ink); }
+.pad { display: grid; grid-template-columns: repeat(3, 46px); grid-template-rows: repeat(3, 40px); gap: 3px; }
+.pad .u { grid-area: 1 / 2; } .pad .l { grid-area: 2 / 1; }
+.pad .r { grid-area: 2 / 3; } .pad .d { grid-area: 3 / 2; }
+.acts { display: grid; grid-template-columns: repeat(2, 64px); grid-auto-rows: 54px; gap: 8px; }
